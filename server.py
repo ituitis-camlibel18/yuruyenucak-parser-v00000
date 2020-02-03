@@ -43,31 +43,33 @@ number.append(a)
 
 """for tempaway in numberaway:
   print(tempaway.getText())"""
+html_list = []
+for i in number:
+  a = i.getText()
+  html_list.append('<li>'+ a + '</li>')
+html_list[11] = '<li>-</li>'
 
         
 
 def numbers1():
-  html_list = []
-  for i in number:
-      a = i.getText()
-      html_list.append('<li>'+ a + '</li>')
-  html_list[11] = '<li>-</li>'
-     
-  html = '<html><body><ul>'
-  for x in html_list:
-    x = f'{x}'
-    html = html + x + '</ul></body></html>'
-    file = open('numbers1.html','w')
+  
+  
 
-    file.write(html)
-    file.close()
+  one = Path("mainpage.html").read_text()
+  two = ''
+  for x in html_list:
+    two +=f'{x}'
+  html = one.format(two)
+  return html
+   
+   
 
 
 
 def create_app():
     app = Bottle()
     app.route("/", "GET", numbers1)
-    app.route("/numbers1.html", "GET", numbers1)
+    app.route("/mainpage.html", "GET", numbers1)
     
     return app
 
