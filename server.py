@@ -12,7 +12,7 @@ from urllib.request import urlopen
 from pathlib import Path
 
 #home
-quote_page = input('page link: ')
+quote_page = 'https://www.sportinglife.com/football/live/86595/teams/home'
 #away
 
 
