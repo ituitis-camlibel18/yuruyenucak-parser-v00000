@@ -13,18 +13,8 @@ from pathlib import Path
 
 #home
 quote_page = 'https://www.sportinglife.com/football/live/86595/teams/home'
-#away
 
 
-
-
-
-"""quote_pageaway = 'https://www.sportinglife.com/football/live/89612/teams/home'
-pageaway = urlopen(quote_page)
-soup = BeautifulSoup(pageaway, 'html.parser')
-numberaway = soup.findAll('div',attrs={'class':'footballPlayerNumber'})
-t = numberaway[11]
-numberaway.append(t)"""
 
 
   
@@ -35,14 +25,6 @@ a = number[11]
 number.append(a)
 
 
-
-
-
-"""for temp in number:
-  print(temp.getText())"""
-
-"""for tempaway in numberaway:
-  print(tempaway.getText())"""
 html_list = []
 for i in number:
   a = i.getText()
