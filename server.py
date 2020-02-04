@@ -10,14 +10,21 @@ import urllib
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from pathlib import Path
+links = []
+
+
+def getlink():
+    link = request.forms.get('password')
+    links.append(link)
+
+    return template('mainpage')
 
 #home
+
+
 quote_page = 'https://www.sportinglife.com/football/live/86595/teams/home'
 
 
-
-
-  
 page = urlopen(quote_page)
 soup = BeautifulSoup(page, 'html.parser')
 number = soup.findAll('div',attrs={'class':'footballPlayerNumber'})
