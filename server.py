@@ -56,6 +56,8 @@ def create_app():
     app.route("/mainpage.html", "GET", numbers1)
     app.route("/submitt.html")
     app.route("/linked", "POST", linked)
+    
+    return app
 
 application = create_app()
 application.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
