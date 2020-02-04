@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 from pathlib import Path
 
-quote_page = 'https://www.sportinglife.com/football/live/86595/teams/home'
+quote_page = 'https://www.sportinglife.com/football/live/86595/teams/away'
 
 def parse():
   global quote_page
