@@ -17,22 +17,16 @@ def parse():
   page = urlopen(quote_page)
   soup = BeautifulSoup(page, 'html.parser')
   number = soup.findAll('div',attrs={'class':'footballPlayerNumber'})
-  lng = len(number)
-  if lng == 0
-    quote_page = 'https://www.sportinglife.com/football/live/86595/teams/away'
-    page = urlopen(quote_page)
-    soup = BeautifulSoup(page, 'html.parser')
-    number = soup.findAll('div',attrs={'class':'footballPlayerNumber'})
-   a = number[11]
-   number.append(a)
-  else
-   html_list = []
-   for i in number:
+  a = number[11]
+  number.append(a)
+
+  html_list = []
+  for i in number:
     a = i.getText()
     html_list.append('<li>'+ a + '</li>')
-   html_list[11] = '<li>-</li>'
+  html_list[11] = '<li>-</li>'
 
-   return html_list
+  return html_list
     
 
 def numbers1():
@@ -62,8 +56,6 @@ def create_app():
     app.route("/mainpage.html", "GET", numbers1)
     app.route("/submitt.html")
     app.route("/linked", "POST", linked)
-    
-    return app
 
 application = create_app()
 application.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
