@@ -15,9 +15,9 @@ links = []
 
 def getlink():
     link = request.forms.get('password')
-    links.append(link)
+    
 
-    return template('mainpage')
+    return Path('/submitt.html').read_text()
 
 #home
 
