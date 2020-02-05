@@ -13,7 +13,7 @@ quote_page = 'https://www.sportinglife.com/football/live/86595/teams/away'
 
 def parse():
   global quote_page
-
+  #while döngüsüne al (geçersiz url)
   page = urlopen(quote_page)
   soup = BeautifulSoup(page, 'html.parser')
   number = soup.findAll('div',attrs={'class':'footballPlayerNumber'})
